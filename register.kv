@@ -1,0 +1,72 @@
+<RegisterScreen>:
+    FloatLayout:
+        Image:
+            source: 'assets/library_background.jpg'  # Set your background image here
+            allow_stretch: True
+            keep_ratio: False
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 40
+            spacing: 20
+            size_hint: (0.8, 0.8)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            background_color: 1, 1, 1, 0.7  # Optional: Semi-transparent background for inputs
+
+            Image:
+                source: 'assets/icons/login.png'
+                size_hint: (1, None)
+                height: 200
+
+            Label:
+                text: "Register for Perpustakaan"
+                font_size: '32sp'
+                color: 0.1, 0.3, 0.5, 1
+                size_hint_y: None
+                height: 50
+
+            TextInput:
+                id: reg_email  # Changed from reg_username_input to reg_email_input
+                hint_text: "Email"  # Updated hint text
+                multiline: False
+                size_hint_y: None
+                height: 50
+                background_normal: ''
+                background_color: 0.9, 0.9, 0.9, 1
+                padding: [10, 10]
+
+            TextInput:
+                id: reg_password
+                hint_text: "Password"
+                password: True
+                multiline: False
+                size_hint_y: None
+                height: 50
+                background_normal: ''
+                background_color: 0.9, 0.9, 0.9, 1
+                padding: [10, 10]
+
+            Button:
+                text: "Register"
+                size_hint_y: None
+                height: 50
+                background_normal: ''
+                background_color: 0.2, 0.6, 0.9, 1
+                color: 1, 1, 1, 1
+                on_release: root.register(reg_email.text, reg_password.text)
+
+            Label:
+                id: reg_error_label
+                text: ""
+                color: 1, 0.1, 0.1, 1
+                size_hint_y: None
+                height: 30
+
+            Button:
+                text: "Back to Login"
+                size_hint_y: None
+                height: 50
+                background_normal: ''
+                background_color: 0.8, 0.2, 0.2, 1
+                color: 1, 1, 1, 1
+                on_press: app.root.current = 'login'

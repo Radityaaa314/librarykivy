@@ -1,0 +1,76 @@
+<LoginScreen>:
+    FloatLayout:
+        Image:
+            source: 'assets/icon/backgroundlibrary.jpg'  # Set your background image here
+            allow_stretch: True
+            keep_ratio: False
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 40
+            spacing: 20  # Adjust spacing
+            size_hint: (0.8, 0.8)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            background_color: 1, 1, 1, 0.7  # Optional: Semi-transparent background for inputs
+
+            Image:
+                source: 'assets/icons/login.png'
+                size_hint: (1, None)
+                height: 200
+
+            Label:
+                text: "Login to Perpustakaan"
+                font_size: '32sp'
+                color: 0.1, 0.3, 0.5, 1
+                size_hint_y: None
+                height: 50
+
+            TextInput:
+                id: email_input  # Changed from username_input to email_input
+                hint_text: "Email"  # Updated hint text
+                multiline: False
+                size_hint_y: None
+                height: 50
+                background_normal: ''
+                background_color: 0.9, 0.9, 0.9, 1
+                padding: [10, 10]
+
+            TextInput:
+                id: password_input
+                hint_text: "Password"
+                password: True
+                multiline: False
+                size_hint_y: None
+                height: 50
+                background_normal: ''
+                background_color: 0.9, 0.9, 0.9, 1
+                padding: [10, 10]
+
+            BoxLayout:
+                orientation: 'horizontal'
+                spacing: 10
+                size_hint_y: None
+                height: 50
+
+                Button:
+                    text: "Login"
+                    background_normal: ''
+                    background_color: 0.1, 0.6, 0.8, 1
+                    color: 1, 1, 1, 1
+                    # Passing the email and password from TextInput to login method
+                    on_release: root.login(email_input.text, password_input.text)
+
+                Button:
+                    text: "Register"
+                    background_normal: ''
+                    background_color: 0.2, 0.6, 0.9, 1
+                    color: 1, 1, 1, 1
+                    on_release: app.root.current = 'register'
+
+            Label:
+                id: error_label
+                text: ""
+                color: 1, 0.1, 0.1, 1
+                size_hint_y: None
+                height: 30
+

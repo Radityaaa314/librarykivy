@@ -1,0 +1,51 @@
+<Book4SlideScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+
+        canvas.before:
+            Rectangle:
+                source: './assets/images/library_background.jpg'  # Ganti dengan gambar latar belakang perpustakaan yang diinginkan
+                size: self.size
+                pos: self.pos
+
+        Image:
+            id: book_image
+            source: "./assets/images/1.jpg"
+            size_hint: (None, None)
+            size: (dp(500), dp(800))  # Perbesar ukuran gambar
+            pos_hint: {"y": 0.1}  # Mengangkat gambar sedikit ke atas
+
+        BoxLayout:
+            id: details_layout
+            orientation: 'vertical'
+            spacing: 10
+            padding: (10, 0, 0, 0)
+
+            Label:
+                id: title_label
+                text: "The Great Gatsby"
+                font_size: '36sp'  # Besarkan font judul
+                halign: "left"
+                valign: "middle"
+                color: (0.2, 0.2, 0.2, 1)  # Optional color for readability
+
+            Label:
+                id: description_label
+                text: "The Great Gatsby, karya F. Scott Fitzgerald, mengisahkan kehidupan Jay Gatsby, " \
+                      "seorang pria kaya dengan masa lalu misterius, yang berusaha mendapatkan kembali " \
+                      "cinta lamanya, Daisy Buchanan. Berlatar era Jazz tahun 1920-an, novel ini menggambarkan " \
+                      "dekadensi, ambisi, dan kemewahan, sekaligus mengeksplorasi tema harapan, cinta yang hilang, " \
+                      "dan kritik sosial terhadap masyarakat Amerika."
+                font_size: '20sp'  # Besarkan font deskripsi
+                halign: "left"
+                valign: "top"
+                text_size: (dp(350), None)
+                color: (0.3, 0.3, 0.3, 1)  # Optional color for readability
+
+            Button:
+                text: "Pinjam Buku"
+                size_hint: (None, None)
+                size: (dp(150), dp(50))
+                on_release: root.borrow_book(self)  # Menghubungkan tombol dengan fungsi pinjam

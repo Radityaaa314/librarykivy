@@ -1,0 +1,34 @@
+<BookReturnForm>:
+    Label:
+        id: title_label
+        text: "Form Pengembalian Buku"
+        font_size: '24sp'
+        size_hint_y: None
+        height: dp(40)
+
+    TextInput:
+        id: nama_input
+        hint_text: "Nama Peminjam"
+        multiline: False
+        size_hint_y: None
+        height: dp(40)
+
+    Spinner:
+        id: judul_spinner
+        text: "Pilih Buku"
+        values: ["Buku 1", "Buku 2", "Buku 3",  "Buku 4",  "Buku 5",  "Buku 6"]
+        size_hint_y: None
+        height: dp(40)
+
+    TextInput:
+        id: tglkembali_input
+        hint_text: "Tanggal Pengembalian (YYYY-MM-DD)"
+        multiline: False
+        size_hint_y: None
+        height: dp(40)
+
+    Button:
+        text: "Submit"
+        size_hint_y: None
+        height: dp(50)
+        on_release: root.submit(self)

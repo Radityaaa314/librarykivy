@@ -1,0 +1,97 @@
+<ProfilScreen>:
+    name: "profil_screen"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        # Layout untuk tombol kembali di kiri atas
+        AnchorLayout:
+            anchor_x: "left"
+            anchor_y: "top"
+            size_hint_y: None
+            height: dp(50)
+
+            Button:
+                text: "Kembali"
+                size_hint: None, None
+                size: dp(100), dp(40)
+                background_color: 0.23, 0.23, 0.23, 1  # Warna cokelat tua
+                on_release: root.go_back(self)
+
+        # Profil Pengguna Form (Bagian atas dengan informasi pengguna)
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: dp(250)
+            padding: dp(10)
+            spacing: dp(10)
+            canvas.before:
+                Color:
+                    rgba: 0.95, 0.95, 0.95, 1  # Warna latar belakang yang lebih terang
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            # Gambar Profil
+            Image:
+                source: "path/to/profile_picture.png"  # Ganti dengan path gambar profil
+                size_hint: None, None
+                size: dp(100), dp(100)
+                pos_hint: {"center_x": 0.5}
+                allow_stretch: True
+                keep_ratio: True
+
+            # Nama Pengguna
+            Label:
+                text: "Nama Pengguna"  # Ganti dengan nama pengguna
+                font_size: '20sp'
+                bold: True
+                color: 0, 0, 0, 1
+                halign: "center"
+                size_hint_y: None
+                height: dp(30)
+                pos_hint: {"center_x": 0.5}
+
+            # Deskripsi Pengguna
+            Label:
+                text: "Deskripsi singkat tentang pengguna."  # Ganti dengan deskripsi pengguna
+                font_size: '14sp'
+                color: 0.5, 0.5, 0.5, 1
+                halign: "center"
+                size_hint_y: None
+                height: dp(40)
+                pos_hint: {"center_x": 0.5}
+
+        # ScrollView untuk Riwayat Peminjaman Buku (Bagian bawah)
+        ScrollView:
+            size_hint: 1, None
+            height: dp(200)
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+
+                BorrowingHistory:
+                    # Tambahkan elemen visual untuk riwayat peminjaman buku
+                    canvas.before:
+                        Color:
+                            rgba: 0.95, 0.95, 0.95, 1  # Warna latar belakang
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                    # Contoh item riwayat peminjaman buku
+                    Label:
+                        text: "Buku 1 - Tanggal Peminjaman"
+                        size_hint_y: None
+                        height: dp(30)
+                        color: 0, 0, 0, 1
+
+                    Label:
+                        text: "Buku 2 - Tanggal Peminjaman"
+                        size_hint_y: None
+                        height: dp(30)
+                        color: 0, 0, 0, 1
+
+                    # Tambahkan lebih banyak item sesuai kebutuhan

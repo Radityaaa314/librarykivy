@@ -1,0 +1,218 @@
+<BookScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(15)
+        canvas.before:
+            Color:
+                rgba: (0.95, 0.92, 0.85, 1)  # Background color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        BoxLayout:
+            size_hint_y: None
+            height: dp(80)
+            padding: dp(15)
+            spacing: dp(10)
+            canvas.before:
+                Color:
+                    rgba: (0.4, 0.26, 0.15, 1)  # Header color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: "Selamat Datang Di Perpustakaan"
+                font_size: '28sp'
+                color: (1, 1, 1, 1)
+                bold: True
+
+        Label:
+            text: "Berikut ini adalah daftar buku yang tersedia di perpustakaan kami"
+            font_size: '20sp'
+            color: (0.33, 0.22, 0.17, 1)
+            size_hint_y: None
+            height: dp(50)
+
+        ScrollView:
+            GridLayout:
+                cols: 2
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(10)
+                spacing: dp(15)
+
+                # Buku 1
+                AnchorLayout:
+                    size_hint_y: None
+                    height: dp(250)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: None, None
+                        height: dp(250)
+                        width: dp(140)
+
+                        Button:
+                            size_hint: (None, None)
+                            size: dp(120), dp(200)
+                            background_normal: './assets/images/1.jpg'
+                            on_release:
+                                app.root.current = 'book1slide_screen'
+
+                        Label:
+                            text: "Tersedia: 3 Buku"
+                            font_size: '16sp'
+                            color: (0.33, 0.22, 0.17, 1)
+                            halign: 'center'
+                            valign: 'middle'
+
+                # Buku 2
+                AnchorLayout:
+                    size_hint_y: None
+                    height: dp(250)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: None, None
+                        height: dp(250)
+                        width: dp(140)
+
+                        Button:
+                            size_hint: (None, None)
+                            size: dp(120), dp(200)
+                            background_normal: './assets/images/2.jpg'
+                            on_release:
+                                app.root.current = 'book2slide_screen'
+
+                        Label:
+                            text: "Tersedia: 2 Buku"
+                            font_size: '16sp'
+                            color: (0.33, 0.22, 0.17, 1)
+                            halign: 'center'
+                            valign: 'middle'
+
+                # Buku 3
+                AnchorLayout:
+                    size_hint_y: None
+                    height: dp(250)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: None, None
+                        height: dp(250)
+                        width: dp(140)
+
+                        Button:
+                            size_hint: (None, None)
+                            size: dp(120), dp(200)
+                            background_normal: './assets/images/3.jpg'
+                            on_release:
+                                app.root.current = 'book3slide_screen'
+
+                        Label:
+                            text: "Tersedia: 5 Buku"
+                            font_size: '16sp'
+                            color: (0.33, 0.22, 0.17, 1)
+                            halign: 'center'
+                            valign: 'middle'
+
+                # Buku 4
+                AnchorLayout:
+                    size_hint_y: None
+                    height: dp(250)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: None, None
+                        height: dp(250)
+                        width: dp(140)
+
+                        Button:
+                            size_hint: (None, None)
+                            size: dp(120), dp(200)
+                            background_normal: './assets/images/4.jpg'
+                            on_release:
+                                app.root .current = 'book4slide_screen'
+
+                        Label:
+                            text: "Tersedia: 4 Buku"
+                            font_size: '16sp'
+                            color: (0.33, 0.22, 0.17, 1)
+                            halign: 'center'
+                            valign: 'middle'
+
+                # Buku 5
+                AnchorLayout:
+                    size_hint_y: None
+                    height: dp(250)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: None, None
+                        height: dp(250)
+                        width: dp(140)
+
+                        Button:
+                            size_hint: (None, None)
+                            size: dp(120), dp(200)
+                            background_normal: './assets/images/5.jpg'
+                            on_release:
+                                app.root.current = 'book5slide_screen'
+
+                        Label:
+                            text: "Tersedia: 1 Buku"
+                            font_size: '16sp'
+                            color: (0.33, 0.22, 0.17, 1)
+                            halign: 'center'
+                            valign: 'middle'
+
+                # Buku 6
+                AnchorLayout:
+                    size_hint_y: None
+                    height: dp(250)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: None, None
+                        height: dp(250)
+                        width: dp(140)
+
+                        Button:
+                            size_hint: (None, None)
+                            size: dp(120), dp(200)
+                            background_normal: './assets/images/6.jpg'
+                            on_release:
+                                app.root.current = 'book6slide_screen'
+
+                        Label:
+                            text: "Tersedia: 6 Buku"
+                            font_size: '16sp'
+                            color: (0.33, 0.22, 0.17, 1)
+                            halign: 'center'
+                            valign: 'middle'
+
+        # Tools di bagian bawah
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: dp(100)
+            spacing: dp(10)
+            padding: dp(10)
+
+            Button:
+                text: "Riwayat"
+                background_color: (0.6, 0.4, 0.2, 1)
+                on_release: app.root.current = 'riwayat_screen'
+
+            Button:
+                text: "Profil"
+                background_color: (0.6, 0.4, 0.2, 1)
+                on_release: app.root.current = 'profil_screen'
+
+            Button:
+                text: "Pengembalian Buku"
+                background_color: (0.6, 0.4, 0.2, 1)
+                on_release: app.root.current = 'pengembalian_screen'
+
+        Button:
+            text: "Logout"
+            size_hint_y: None
+            height: dp(50)
+            background_color: (0.8, 0.2, 0.2, 1)
+            on_release: root.logout(self) 
